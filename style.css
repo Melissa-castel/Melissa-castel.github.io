@@ -7,9 +7,11 @@
 body{
     font-family: helvetica,arial,sans-serif;
     line-height: 1.5;
-    /* cursor: url('curseur-64.png') 32 32, auto ; */
+     cursor: url('img/custom-cursor.png') 10 10 , auto ; 
 
 }
+
+
 
 .grid {
   display: grid;
@@ -21,7 +23,7 @@ body{
   gap: 10px;
 }
   
-img{ 
+img,video{ 
     max-width: 100%;
     height:auto;
     display: block;
@@ -51,39 +53,43 @@ img{
 }
 
 .header-title {
-  font-size: 24px;
+  font-size: 40px;
   /* font-weight: bold; */
   color: #333;  /* Couleur du nom */
   font-family: "mono45-headline", monospace;
   font-weight: 500;
   font-style: normal;
+  
 
 }
 
 .header-right {
   display: flex;
   gap: 10px;
+  
   }
 
   .capsule {
   
     padding: 12px 20px;
-    background-color: #dedede6c; 
+    background-color: #eae8e86c; 
     border-radius: 30px;
-    color: #8db1e8; 
+    color: #88a9d9; 
     text-decoration: none;
     font-weight: bold;
     transition: all 0.3s ease;
     font-size: 16px;
+    
 }
 
 .capsule2 {
   padding: 12px 20px;
-  background-color: #dedede6c; 
+  background-color: #eae8e86c; 
   border-radius: 30px;
   color: #000000; 
   text-decoration: none;
-  font-weight: bold;
+  font-family: "mono45-headline", monospace;
+  font-weight: 400;
   transition: all 0.3s ease;
   font-size: 28px;
 }
@@ -170,9 +176,12 @@ img{
   }
   .item:hover img{
     opacity:0.5;
+    cursor: url('img/curseur-1.png') 10 10 , auto ; 
+  
   }
   .item:hover p{
     opacity:0.7;
+    cursor: url('img/curseur-1.png') 10 10 , auto ;
   }
 
 
@@ -200,18 +209,134 @@ img{
     margin-bottom: 15px; /* Espace entre le bandeau et le début des paragraphes */
     padding: 0 20px;
 }
+[lang="fr"]{,
+    font-weight: regular;
+    color: rgb(0, 0 , 0);
+} 
 
-.desc [lang="en"],
-.desc [lang="credit"] {
+[lang="en"],
+.credit {
     font-weight: 100;
     color: rgb(145, 142, 142);
 }
 .footer {
   background-color: #ffffff;
-  color: rgb(0, 0, 0);
+  color: rgb(145, 142, 142);
   text-align: center;
-  padding: 15px;
+  padding: 10px;
   margin-top: auto;
 }
+
+.gif-resize {
+  width: 600px; /* Largeur souhaitée */
+  height: auto; /* Ajuste la hauteur proportionnellement */
+  max-width: 100%; /* Pour s'assurer que le GIF ne dépasse pas la largeur du conteneur */
+  display: block; /* Pour corriger l'espacement indésirable dans les mises en page inline */
+  margin: 0 auto;
+}
+
+/* Conteneur principal */
+/*  */
+
+/* Colonnes */
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.column-fr {
+  grid-column: span 1; /* Fusionne sur 2 colonnes */
+}
+
+/* Cellules */
+.cell {
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.about-section {
+  min-height: calc(100vh - 180px);
+}
+
+/* Conteneur principal */
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+
+
+/* Colonnes de gauche et du milieu regroupées */
+.about-columns {
+  grid-template-columns: 1fr 1fr 3fr;
+  gap:24px 0;
+  align-items: start;
+  align-content: start;
+  /* gap: 20px; Espacement entre les cellules */
+}
+
+@media (min-width:680px){
+  .about-columns{
+    display: grid;
+  }
+}
+
+.about-video{
+  grid-column: 3/4;
+  grid-row: 1/4;
+  align-self: end;
+  justify-self: end;  
+  width:50%;
+
+}
+
+
+
+.about-columns p,
+.about-columns h3{
+  padding:0 12px;
+}
+
+
+/* Filet sous les titres */
+.about-subtitle-fr {
+  font-family: helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ed85d5;
+  border-bottom: 2px solid #f2bfee; /* Ligne discrète sous le titre */
+  padding-bottom: 2px; /* Espacement sous la ligne */
+}
+.about-subtitle-en {
+  font-family: helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ed85d551;
+  border-bottom: 2px solid #f2bfee;
+  ; /* Ligne discrète sous le titre */
+  padding-bottom: 2px; /* Espacement sous la ligne */
+}
+
+/* Colonne droite : Vidéo */
+.about-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.lien{
+  color: #88a9d9; 
+  text-decoration: none;
+  
+}
+
+
 
 
